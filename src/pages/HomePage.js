@@ -1,6 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { Value } from 'slate';
 import { getEditorValue } from '../actions/HomeScreenActions';
+import EditorHome from '../components/homePage/EditorHome';
 
 class HomePage extends React.Component {
   componentDidMount() {
@@ -8,11 +10,13 @@ class HomePage extends React.Component {
   }
 
   render() {
-    console.log('HomePage - render', this.props);
+    const { editorValue } = this.props;
+    const initialValue = editorValue ? Value.fromJSON(editorValue) : null;
     return (
       <div>
         <div>
           <h1>Home page</h1>
+          <EditorHome value={initialValue} />
         </div>
       </div>
     );
