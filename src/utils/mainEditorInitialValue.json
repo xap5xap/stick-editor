@@ -5,7 +5,13 @@
     "nodes": [
       {
         "object": "block",
-        "type": "header"
+        "type": "title",
+        "nodes": [
+          {
+            "object": "text",
+            "text": "Enforce Your Layout!"
+          }
+        ]
       }
     ]
   }

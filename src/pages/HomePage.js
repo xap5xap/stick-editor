@@ -18,19 +18,25 @@ class HomePage extends React.Component {
     this.props.getEditorValue();
   }
 
+  onChangeEditorValue = value => {
+    if (value.document !== this.props.editorValue.document) {
+    //   console.log('should save to DB');
+    }
+  };
+
   render() {
     const { editorValue } = this.props;
-    const initialValue = editorValue ? Value.fromJSON(editorValue) : null;
     return (
       <Container>
         <h3>Make your ideas flow</h3>
-        <EditorHome value={initialValue} title="Introduction" />
+        <EditorHome value={editorValue} title="Introduction" onChange={this.onChangeEditorValue} />
       </Container>
     );
   }
 }
 const mapStateToProps = state => {
-  const { editorValue } = state.main;
+  const editorValue = state.main.editorValue ? Value.fromJSON(state.main.editorValue) : null;
+
   return { editorValue };
 };
 

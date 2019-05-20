@@ -1,7 +1,7 @@
 import { GET_EDITOR_VALUE_SUCCESS } from '../actions/types';
 
 const INITIAL_STATE = {
-  editorValue: null
+  editorValue: {}
 };
 
 export default (state = INITIAL_STATE, action) => {

@@ -2,13 +2,13 @@ import { Block } from 'slate';
 
 export const schema = {
   document: {
-    nodes: [{ match: { type: 'header' }, min: 1, max: 1 }],
+    nodes: [{ match: { type: 'title' }, min: 1, max: 1 }],
     normalize: (editor, { code, node, child, index }) => {
       let type = 'paragraph';
       if (index === 0) {
-        type = 'header';
+        type = 'title';
       } else if (index === 1) {
-        type = 'subHeader';
+        type = 'subtitle';
       }
       if (code === 'child_type_invalid') {
         console.log('child_type_invalid');
