@@ -3,6 +3,7 @@ import { Editor } from 'slate-react';
 import styled from 'styled-components';
 import HeaderEditor from './HeaderEditor';
 import { Colors, Metrics } from '../../theme';
+import { schema } from '../../utils/MainEditorUtils';
 
 const Container = styled.div`
   background-color: ${Colors.snow};
@@ -19,7 +20,7 @@ class EditorHome extends React.Component {
     return (
       <Container>
         <HeaderEditor title={this.props.title} />
-        <Editor autoFocus value={this.props.value} />
+        <Editor autoFocus value={this.props.value} schema={schema} />
       </Container>
     );
   }
