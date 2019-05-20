@@ -1,12 +1,14 @@
 import React from 'react';
 import { Editor } from 'slate-react';
 import styled from 'styled-components';
-import { Colors } from '../../theme';
+import HeaderEditor from './HeaderEditor';
+import { Colors, Metrics } from '../../theme';
 
 const Container = styled.div`
   background-color: ${Colors.snow};
   width: 50%;
-  padding: 1em;
+  padding: ${Metrics.xs}em;
+  padding-left: ${Metrics.m}em;
 `;
 
 class EditorHome extends React.Component {
@@ -16,6 +18,7 @@ class EditorHome extends React.Component {
     }
     return (
       <Container>
+        <HeaderEditor title={this.props.title} />
         <Editor autoFocus value={this.props.value} />
       </Container>
     );

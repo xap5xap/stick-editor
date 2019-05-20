@@ -1,3 +1,4 @@
 import Colors from './colors';
+import Metrics from './metrics';
 
-export { Colors };
+export { Colors, Metrics };
