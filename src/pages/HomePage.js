@@ -1,8 +1,17 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Value } from 'slate';
+import styled from 'styled-components';
 import { getEditorValue } from '../actions/HomeScreenActions';
 import EditorHome from '../components/homePage/EditorHome';
+
+const Container = styled.div`
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+`;
 
 class HomePage extends React.Component {
   componentDidMount() {
@@ -13,12 +22,10 @@ class HomePage extends React.Component {
     const { editorValue } = this.props;
     const initialValue = editorValue ? Value.fromJSON(editorValue) : null;
     return (
-      <div>
-        <div>
-          <h1>Home page</h1>
-          <EditorHome value={initialValue} />
-        </div>
-      </div>
+      <Container>
+        <h3>Make your ideas flow</h3>
+        <EditorHome value={initialValue} title="Introduction" />
+      </Container>
     );
   }
 }
