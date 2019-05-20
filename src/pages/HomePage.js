@@ -1,7 +1,14 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import { getEditorValue } from '../actions/HomeScreenActions';
 
 class HomePage extends React.Component {
+  componentDidMount() {
+    this.props.getEditorValue();
+  }
+
   render() {
+    console.log('HomePage - render', this.props);
     return (
       <div>
         <div>
@@ -11,5 +18,12 @@ class HomePage extends React.Component {
     );
   }
 }
+const mapStateToProps = state => {
+  const { editorValue } = state.main;
+  return { editorValue };
+};
 
-export default HomePage;
+export default connect(
+  mapStateToProps,
+  { getEditorValue }
+)(HomePage);
