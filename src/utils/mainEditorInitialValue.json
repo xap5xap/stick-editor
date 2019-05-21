@@ -25,11 +25,11 @@
       },
       {
         "object": "block",
-        "type": "paragraph",
+        "type": "bullet",
         "nodes": [
           {
             "object": "text",
-            "text": "this is subtitle"
+            "text": "this is a bullet"
           }
         ]
       }

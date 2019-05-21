@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import HeaderEditor from './HeaderEditor';
 import { Colors, Metrics } from '../../theme';
 import { schema } from '../../utils/MainEditorUtils';
-import { TitlePlugin, SubtitlePlugin } from '../../utils/plugins';
+import { TitlePlugin, SubtitlePlugin, BulletPlugin } from '../../utils/plugins';
 
 const Container = styled.div`
   background-color: ${Colors.snow};
@@ -15,9 +15,8 @@ const Container = styled.div`
 
 const titlePlugin = TitlePlugin({ placeholder: 'Start typing your title' });
 const subtitlePlugin = SubtitlePlugin({ placeholder: 'Type a subtitle' });
-const plugins = [titlePlugin, subtitlePlugin];
-// const plugins = [ subtitlePlugin];
-// const plugins = [ titlePlugin];
+const bulletPlugin = BulletPlugin({ placeholder: 'Keep writing...' });
+const plugins = [titlePlugin, subtitlePlugin, bulletPlugin];
 
 class EditorHome extends React.Component {
   state = {
