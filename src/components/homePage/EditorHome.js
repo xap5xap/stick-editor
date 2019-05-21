@@ -5,7 +5,7 @@ import HeaderEditor from './HeaderEditor';
 import { Colors, Metrics } from '../../theme';
 import { schema } from '../../utils/MainEditorUtils';
 import { TitlePlugin, SubtitlePlugin, BulletPlugin } from '../../utils/plugins';
-import Gripple from '../editor/Gripple';
+import { Gripple, HeaderButtonBar } from '../editor';
 
 const Container = styled.div`
   background-color: ${Colors.snow};
@@ -45,6 +45,7 @@ class EditorHome extends React.Component {
     return (
       <Container>
         <Gripple />
+        <HeaderButtonBar />
         <HeaderEditor title={this.props.title} />
         <Editor autoFocus value={value} onChange={this.onChange} schema={schema} plugins={plugins} />
       </Container>

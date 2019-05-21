@@ -1,14 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Colors } from '../../theme/';
+
 const Container = styled.button`
   display: flex;
   position: absolute;
-  top: -2px;
-  left: -2px;
-  height: 32px;
-  width: 24px;
-  padding: 6px 6px 14px;
+  top: 10px;
+  left: 5px;
   border: none;
   background: transparent;
   cursor: pointer;
