@@ -1,23 +1,33 @@
 import React from 'react';
+import Title from '../components/editor/Title';
 
 export default function(options = {}) {
-  console.log('title plugins');
+  const schema = {
+    blocks: {
+      code: {
+        nodes: [
+          {
+            match: { type: 'title', min: 1, max: 1 }
+          }
+        ]
+      }
+    }
+  };
+
   function renderNode(props, editor, next) {
+    const { node, attributes, children } = props;
+
     console.log('headerPlugin - renderNode');
 
-    return <h1 {...props.attributes}>{props.children}</h1>;
-
-    // const { node } = props;
-    // console.log('headerPlugin - renderNode - node', node);
-
-    // switch (node.type) {
-    //   case 'title':
-    //     return <h1>{props.children}</h1>;
-    //   default:
-    //     return next;
-    // }
+    switch (node.type) {
+      case 'title':
+        return <Title {...props} placeholder={options.placeholder} />;
+      default:
+        return next;
+    }
   }
   return {
-    renderNode
+    renderNode,
+    schema
   };
 }

@@ -13,7 +13,7 @@ const Container = styled.div`
   padding-left: ${Metrics.m}em;
 `;
 
-const titlePlugin = TitlePlugin();
+const titlePlugin = TitlePlugin({ placeholder: 'Start typing your title ' });
 const plugins = [titlePlugin];
 
 class EditorHome extends React.Component {
