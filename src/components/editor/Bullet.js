@@ -1,16 +1,34 @@
 import React from 'react';
+import styled from 'styled-components';
 import Placeholder from './Placeholder';
+import Icon from '../../components/homePage/Icon';
+import { Metrics } from '../../theme';
+
+const Container = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: ${Metrics.xs}em;
+`;
 
 class Bullet extends React.Component {
   render() {
     if (this.props.node.text.length === 0) {
       return (
-        <Placeholder {...this.props.attributes} text={this.props.placeholder}>
-          {this.props.children}
-        </Placeholder>
+        <Container>
+          <Icon empty/>
+          <Placeholder {...this.props.attributes} text={this.props.placeholder}>
+            {this.props.children}
+          </Placeholder>
+        </Container>
       );
     }
-    return <p {...this.props.attributes}>{this.props.children}</p>;
+    return (
+      <Container>
+        <Icon />
+        <p {...this.props.attributes}>{this.props.children}</p>
+      </Container>
+    );
   }
 }
 
