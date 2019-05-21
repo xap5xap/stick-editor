@@ -11,7 +11,13 @@ export default function(options = {}) {
         return next();
     }
   }
+  function onKeyDown(event, editor, next) {
+    console.log('BulletPlugin - onKeyDown', event);
+    console.log('BulletPlugin - editor', editor);
+    return next();
+  }
   return {
-    renderBlock
+    renderBlock,
+    onKeyDown
   };
 }

@@ -5,12 +5,14 @@ import HeaderEditor from './HeaderEditor';
 import { Colors, Metrics } from '../../theme';
 import { schema } from '../../utils/MainEditorUtils';
 import { TitlePlugin, SubtitlePlugin, BulletPlugin } from '../../utils/plugins';
+import Gripple from '../editor/Gripple';
 
 const Container = styled.div`
   background-color: ${Colors.snow};
   width: 50%;
   padding: ${Metrics.xs}em;
   padding-left: ${Metrics.m}em;
+  position: relative;
 `;
 
 const titlePlugin = TitlePlugin({ placeholder: 'Start typing your title' });
@@ -42,6 +44,7 @@ class EditorHome extends React.Component {
     }
     return (
       <Container>
+        <Gripple />
         <HeaderEditor title={this.props.title} />
         <Editor autoFocus value={value} onChange={this.onChange} schema={schema} plugins={plugins} />
       </Container>

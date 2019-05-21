@@ -12,11 +12,15 @@ const Container = styled.div`
 `;
 
 class Bullet extends React.Component {
+  onKeyDown = event => {
+    console.log('Bullet-onKeyDown', event);
+  };
+  
   render() {
     if (this.props.node.text.length === 0) {
       return (
         <Container>
-          <Icon empty/>
+          <Icon empty />
           <Placeholder {...this.props.attributes} text={this.props.placeholder}>
             {this.props.children}
           </Placeholder>
@@ -26,7 +30,9 @@ class Bullet extends React.Component {
     return (
       <Container>
         <Icon />
-        <p {...this.props.attributes}>{this.props.children}</p>
+        <p {...this.props.attributes} onKeyDown={this.onKeyDown}>
+          {this.props.children}
+        </p>
       </Container>
     );
   }
