@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import HeaderEditor from './HeaderEditor';
 import { Colors, Metrics } from '../../theme';
 import { schema } from '../../utils/MainEditorUtils';
-import TitlePlugin from '../../utils/TitlePlugin';
+import { TitlePlugin, SubtitlePlugin } from '../../utils/plugins';
 
 const Container = styled.div`
   background-color: ${Colors.snow};
@@ -13,8 +13,11 @@ const Container = styled.div`
   padding-left: ${Metrics.m}em;
 `;
 
-const titlePlugin = TitlePlugin({ placeholder: 'Start typing your title ' });
-const plugins = [titlePlugin];
+const titlePlugin = TitlePlugin({ placeholder: 'Start typing your title' });
+const subtitlePlugin = SubtitlePlugin({ placeholder: 'Type a subtitle' });
+const plugins = [titlePlugin, subtitlePlugin];
+// const plugins = [ subtitlePlugin];
+// const plugins = [ titlePlugin];
 
 class EditorHome extends React.Component {
   state = {
@@ -23,6 +26,7 @@ class EditorHome extends React.Component {
 
   onChange = ({ value }) => {
     this.props.onChange(value);
+    console.log('onChange value', value.document.toJSON());
     this.setState({ value });
   };
 
@@ -40,7 +44,7 @@ class EditorHome extends React.Component {
     return (
       <Container>
         <HeaderEditor title={this.props.title} />
-        <Editor autoFocus value={value} onChange={this.onChange} schemas={schema} plugins={plugins} />
+        <Editor autoFocus value={value} onChange={this.onChange} schema={schema} plugins={plugins} />
       </Container>
     );
   }

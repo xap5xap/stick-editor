@@ -6,7 +6,7 @@ class Title extends React.Component {
     const h1Styles = {
       fontSize: '2em',
       marginTop: '0.6em',
-      marginBottom: '0.6em'
+      marginBottom: '0em'
     };
     if (this.props.node.text.length === 0) {
       return (

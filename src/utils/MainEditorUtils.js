@@ -2,7 +2,10 @@ import { Block } from 'slate';
 
 export const schema = {
   document: {
-    nodes: [{ match: { type: 'title' }, min: 1, max: 1 }],
+    nodes: [
+      { match: { type: 'title' }, min: 1, max: 1 },
+      { match: { type: 'subtitle' }, min: 1, max: 1 }
+    ],
     normalize: (editor, { code, node, child, index }) => {
       let type = 'paragraph';
       if (index === 0) {

@@ -9,7 +9,27 @@
         "nodes": [
           {
             "object": "text",
-            "text": "Enforce Your Layout!"
+            "text": "this is a titlex"
+          }
+        ]
+      },
+      {
+        "object": "block",
+        "type": "subtitle",
+        "nodes": [
+          {
+            "object": "text",
+            "text": "this is subtitle"
+          }
+        ]
+      },
+      {
+        "object": "block",
+        "type": "paragraph",
+        "nodes": [
+          {
+            "object": "text",
+            "text": "this is subtitle"
           }
         ]
       }

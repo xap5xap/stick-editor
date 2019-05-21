@@ -31,15 +31,17 @@ const Title = styled.div`
   font-weight: bold;
 `;
 
-const HeaderEditor = props => {
-  return (
-    <Container>
-      <IconContainer>
-        <Icon />
-      </IconContainer>
-      <Title>{props.title}</Title>
-    </Container>
-  );
-};
+class HeaderEditor extends React.Component {
+  render() {
+    return (
+      <Container>
+        <IconContainer>
+          <Icon />
+        </IconContainer>
+        <Title>{this.props.title}</Title>
+      </Container>
+    );
+  }
+}
 
 export default HeaderEditor;
