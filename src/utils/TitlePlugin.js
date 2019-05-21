@@ -14,7 +14,7 @@ export default function(options = {}) {
     }
   };
 
-  function renderNode(props, editor, next) {
+  function renderBlock(props, editor, next) {
     const { node, attributes, children } = props;
 
     console.log('headerPlugin - renderNode');
@@ -27,7 +27,7 @@ export default function(options = {}) {
     }
   }
   return {
-    renderNode,
+    renderBlock,
     schema
   };
 }

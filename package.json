@@ -10,8 +10,8 @@
     "react-scripts": "3.0.1",
     "redux": "^4.0.1",
     "redux-thunk": "^2.3.0",
-    "slate": "0.46.1",
-    "slate-react": "0.21.24",
+    "slate": "0.47.2",
+    "slate-react": "0.22.2",
     "styled-components": "^4.2.0"
   },
   "scripts": {
