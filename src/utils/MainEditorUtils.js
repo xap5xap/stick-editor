@@ -15,11 +15,9 @@ export const schema = {
         type = 'subtitle';
       }
       if (code === 'child_type_invalid') {
-        console.log('child_type_invalid');
         return editor.setNodeByKey(child.key, type);
       }
       if (code === 'child_min_invalid') {
-        console.log('child_min_invalid');
         const block = Block.create(type);
 
         return editor.insertNodeByKey(node.key, index, block);

@@ -25,9 +25,11 @@ class EditorHome extends React.Component {
     value: null
   };
 
-  onChange = ({ value }) => {
+  onChange = change => {
+    // console.log('change', change);
+    const { value } = change;
     this.props.onChange(value);
-    console.log('onChange value', value.document.toJSON());
+    // console.log('onChange value', value.document.toJSON());
     this.setState({ value });
   };
 

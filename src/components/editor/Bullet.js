@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import Placeholder from './Placeholder';
-import Icon from '../../components/homePage/Icon';
+import Icon from './Icon';
 import { Metrics } from '../../theme';
 
 const Container = styled.div`
@@ -15,8 +15,11 @@ class Bullet extends React.Component {
   onKeyDown = event => {
     console.log('Bullet-onKeyDown', event);
   };
-  
+
   render() {
+    const { node } = this.props;
+    const bulletIconUrl = node.data.get('iconUrl');
+
     if (this.props.node.text.length === 0) {
       return (
         <Container>
@@ -29,7 +32,7 @@ class Bullet extends React.Component {
     }
     return (
       <Container>
-        <Icon />
+        <Icon iconUrl={bulletIconUrl} />
         <p {...this.props.attributes} onKeyDown={this.onKeyDown}>
           {this.props.children}
         </p>

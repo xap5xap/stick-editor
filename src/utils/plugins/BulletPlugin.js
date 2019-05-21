@@ -12,8 +12,8 @@ export default function(options = {}) {
     }
   }
   function onKeyDown(event, editor, next) {
-    console.log('BulletPlugin - onKeyDown', event);
-    console.log('BulletPlugin - editor', editor);
+    // console.log('BulletPlugin - onKeyDown', event);
+    // console.log('BulletPlugin - editor', editor);
     return next();
   }
   return {

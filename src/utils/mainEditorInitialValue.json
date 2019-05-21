@@ -9,7 +9,7 @@
         "nodes": [
           {
             "object": "text",
-            "text": "this is a titlex"
+            "text": "Doc Creation UX/UI"
           }
         ]
       },
@@ -19,17 +19,29 @@
         "nodes": [
           {
             "object": "text",
-            "text": "this is subtitle"
+            "text": "Reimaging Sticks vision through an "
           }
         ]
       },
       {
         "object": "block",
         "type": "bullet",
+        "data": { "iconUrl": "https://loremflickr.com/100/100" },
         "nodes": [
           {
             "object": "text",
-            "text": "this is a bullet"
+            "text": "Breaking Slideshows"
+          }
+        ]
+      },
+      {
+        "object": "block",
+        "type": "bullet",
+        "data": { "iconUrl": "https://loremflickr.com/100/100" },
+        "nodes": [
+          {
+            "object": "text",
+            "text": "Designing scalable system"
           }
         ]
       }

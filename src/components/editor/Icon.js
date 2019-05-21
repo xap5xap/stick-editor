@@ -11,17 +11,21 @@ const Container = styled.div`
   display: flex;
   margin-right: ${Metrics.xs}em;
   flex-direction: row;
-  width: 80px;
-  height: 55px;
+  width: 85px;
+  height: 60px;
 `;
 
-const IconImage = styled.div`
+const RoundedImage = styled.img`
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+`;
+
+const IconImageDummy = styled.div`
   background-color: ${Colors.darkGray};
-  width: 30px;
-  height: 30px;
-  border-radius: 15px;
-  justify-content: center;
-  align-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
 `;
 const ContainerIcon = styled(FontAwesomeIcon)`
   cursor: pointer;
@@ -29,13 +33,19 @@ const ContainerIcon = styled(FontAwesomeIcon)`
 `;
 
 class Icon extends React.Component {
+  renderIconImage = () => {
+    if (this.props.iconUrl) {
+      return <RoundedImage src={this.props.iconUrl} alt="icon of text" />;
+    }
+    return <IconImageDummy />;
+  };
   renderIcon = () => {
     if (this.props.empty) {
       return null;
     }
     return (
       <>
-        <IconImage />
+        {this.renderIconImage()}
         <ContainerIcon icon="chevron-down" color={Colors.darkGray} size="sm" />
       </>
     );

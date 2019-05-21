@@ -7,8 +7,7 @@ class Subtitle extends React.Component {
     const h2Styles = {
       fontSize: '1.4em',
       marginTop: '0.6em',
-      marginBottom: '0.6em',
-      fontWight: 'normal'
+      fontWeight: 'normal'
     };
     if (this.props.node.text.length === 0) {
       return (

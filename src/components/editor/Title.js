@@ -16,7 +16,7 @@ class Title extends React.Component {
       );
     }
     return (
-      <h1 {...this.props.attributes} styles={h1Styles}>
+      <h1 {...this.props.attributes} style={{...h1Styles}}>
         {this.props.children}
       </h1>
     );
