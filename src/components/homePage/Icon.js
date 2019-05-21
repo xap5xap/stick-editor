@@ -1,36 +1,48 @@
 import React from 'react';
 import styled from 'styled-components';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Colors, Metrics } from '../../theme';
 
 const Container = styled.div`
   background-color: ${Colors.lightGrey};
-  width: 3em;
-  height: 2em;
   justify-content: center;
   align-items: center;
   border-radius: 5px;
-  padding: ${Metrics.xs}em;
   display: flex;
   margin-right: ${Metrics.xs}em;
+  flex-direction: row;
+  width: 80px;
+  height: 55px;
 `;
 
 const IconImage = styled.div`
   background-color: ${Colors.darkGray};
-  width: 2em;
-  height: 2em;
-  border-radius: 1em;
+  width: 30px;
+  height: 30px;
+  border-radius: 15px;
   justify-content: center;
   align-items: center;
-  display: flex;
+`;
+const ContainerIcon = styled(FontAwesomeIcon)`
+  cursor: pointer;
+  margin-left: 1em;
 `;
 
 class Icon extends React.Component {
-  render() {
+  renderIcon = () => {
+    if (this.props.empty) {
+      return null;
+    }
     return (
-      <Container>
+      <>
         <IconImage />
-      </Container>
+        <ContainerIcon icon="chevron-down" color={Colors.darkGray} size="sm" />
+      </>
     );
+  };
+
+  render() {
+    return <Container> {this.renderIcon()}</Container>;
   }
 }
 
